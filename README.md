@@ -20,3 +20,55 @@ The application should be accessible at 127.0.0.1:8080.
 The API is secured by [basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The only existing user is "user" with password "test".
 
 Default customer with ID **1** and service with ID **1** will be created at the application's start.
+
+## Endpoints
+
+Get list of all available services:
+```javascript
+GET /api/v1/services
+```
+
+Get list of selected services by certain customer:
+```javascript
+GET /api/v1/customers/{customerId}/services
+```
+
+Add service required by customer:
+```javascript
+POST /api/v1/customers/{customerId}/services/{serviceId}
+```
+
+Remove service cancelled by customer:
+```javascript
+DELETE /api/v1/customers/{customerId}/services/{serviceId}
+```
+
+Calculate cost of services:
+```javascript
+DELETE /api/v1/customers/{customerId}/calculate-cost
+```
+
+Get list of devices of certain customer:
+```javascript
+GET /api/v1/customers/{customerId}/devices
+```
+
+Create new device for certain customer:
+```javascript
+POST /api/v1/customers/{customerId}/devices
+```
+
+Get device by ID:
+```javascript
+GET /api/v1/devices/{deviceId}
+```
+
+Update existing device:
+```javascript
+PATCH /api/v1/devices/{deviceId}
+```
+
+Delete existing device:
+```javascript
+DELETE /api/v1/devices/{deviceId}
+```
