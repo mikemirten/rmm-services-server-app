@@ -17,6 +17,6 @@ Make sure nothing using port 8080.
 Build and run application by: ```gradle bootRun``` command.
 The application should be accessible at 127.0.0.1:8080.
 
-The API is secured by Basic WEB authentication. The only existing user is "user" with password "test".
+The API is secured by [basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The only existing user is "user" with password "test".
 
 Default customer with ID **1** and service with ID **1** will be created at the application's start.
