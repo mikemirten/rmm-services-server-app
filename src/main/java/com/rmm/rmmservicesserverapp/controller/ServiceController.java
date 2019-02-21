@@ -10,6 +10,7 @@ import com.rmm.rmmservicesserverapp.view.ServiceView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,12 @@ public class ServiceController
         this.customerService = customerService;
         this.serviceService  = serviceService;
         this.costCalculator  = costCalculator;
+    }
+
+    @ModelAttribute
+    public void handleResponse(HttpServletResponse response)
+    {
+        response.setHeader("Access-Control-Allow-Origin", "*");
     }
 
     /**
