@@ -2,8 +2,8 @@
 
 ## Requirements
 - Java runtime version 1.8 or later 
-- Gradle version 4.0 or later
-- PostgresQL database version 9.0 or later
+- Gradle version 4.x
+- PostgreSQL database version 9.x
 
 ## Deployment 
 Clone the reposiroty: ```git clone git@github.com:mikemirten/rmm-services-server-app.git```
