@@ -21,8 +21,50 @@ The API is secured by [basic access authentication](https://en.wikipedia.org/wik
 
 Default customer with ID **1** and service with ID **1** will be created at the application's start.
 
-## Endpoints
+## Request/Response Format
+The API using a simple document with data wrapped into "data"-field and errors wrapped into "errors"-field.
 
+An example of document with single object:
+```javascript
+{
+  "data": {
+    "id": 1,
+      "name": "Dell Precission 7820",
+      "type": "WINDOWS_WORKSTATION"
+  }
+}
+```
+With a collection of objects:
+```javascript
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Dell Precission 7820",
+      "type": "WINDOWS_WORKSTATION"
+    },
+    {
+      "id": 2,
+      "name": "PowerEdge T640",
+      "type": "WINDOWS_SERVER"
+    }
+  ]
+}
+```
+With validation errors:
+```javascript
+{
+  "errors": [
+    {
+      "title": "Constraint Violation",
+      "details": "Cannot be empty",
+      "path": "data.name"
+    }
+  ]
+}
+```
+
+## Endpoints
 Get list of all available services:
 ```javascript
 GET /api/v1/services
